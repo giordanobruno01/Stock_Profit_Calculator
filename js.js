@@ -9,8 +9,8 @@ function calculation(){
     var sellconversion = parseFloat(document.getElementById("sellconversion").value);
     var sellfees = parseFloat(document.getElementById("sellfees").value);
     var selldate = document.getElementById("selldate").value;
-    var buyconverted = (buyprice + buyfees)*buyconversion;
-    var sellcoverted = (sellprice + sellfees)*sellconversion;
+    var buyconverted = (buyprice + buyfees)/buyconversion;
+    var sellcoverted = (sellprice - sellfees)/sellconversion;
     console.log(buyconversion);
     document.getElementById("profit").innerHTML = sellcoverted - buyconverted;
 }
