@@ -1,0 +1,22 @@
+header {
+  background-color: aqua;
+}
+
+main {
+  background-color: aliceblue;
+}
+main div {
+  background-color: aquamarine;
+}
+main form {
+  width: 80vw;
+}
+main form div {
+  display: block;
+  align-items: center;
+  margin: auto;
+}
+
+footer {
+  background-color: red;
+}/*# sourceMappingURL=style.css.map */

@@ -1,16 +1,26 @@
 function calculation(){
 
     var stock = document.getElementById("stock").value;
-    var buydate = document.getElementById("buydate").value;
+    var buydate =  new Date(document.getElementById("buydate").value) ;
     var buyprice = parseFloat(document.getElementById("buyprice").value);
-    var buyconversion = parseFloat(document.getElementById("buyconversion").value);
-    var buyfees = parseFloat(document.getElementById("buyfees").value);
+    var buyconversion = parseFloat(document.getElementById("buyconversion").value === "" ? 1 :document.getElementById("buyconversion").value);
+    var buyfees = parseFloat(document.getElementById("buyfees").value === "" ? 0 :document.getElementById("buyfees").value);
     var sellprice = parseFloat(document.getElementById("sellprice").value);
-    var sellconversion = parseFloat(document.getElementById("sellconversion").value);
-    var sellfees = parseFloat(document.getElementById("sellfees").value);
-    var selldate = document.getElementById("selldate").value;
+    var sellconversion = parseFloat(document.getElementById("sellconversion").value === "" ? 1 :document.getElementById("sellconversion").value);
+    var sellfees = parseFloat(document.getElementById("sellfees").value === "" ? 0 :document.getElementById("sellfees").value);
+    var selldate = new Date(document.getElementById("selldate").value) ;
+    
+    if(isNaN(buyprice) || isNaN(sellprice)){
+       
+        alert("Prices are mandatory")
+        return
+    }
+   
     var buyconverted = (buyprice + buyfees)/buyconversion;
     var sellcoverted = (sellprice - sellfees)/sellconversion;
-    console.log(buyconversion);
+    
     document.getElementById("profit").innerHTML = sellcoverted - buyconverted;
+    timediff = selldate - buydate
+    document.getElementById("days").innerHTML = Math.ceil(timediff/ (1000 * 3600 * 24));
+    document.getElementById("percentage").innerHTML = 1
 }
