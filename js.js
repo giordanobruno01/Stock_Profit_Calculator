@@ -18,9 +18,11 @@ function calculation(){
    
     var buyconverted = (buyprice + buyfees)/buyconversion;
     var sellcoverted = (sellprice - sellfees)/sellconversion;
-    
-    document.getElementById("profit").innerHTML = sellcoverted - buyconverted;
-    timediff = selldate - buydate
+
+    var netresult = sellcoverted - buyconverted
+    document.getElementById("profit").innerHTML = netresult.toFixed(2) ;
+    var timediff = selldate - buydate
     document.getElementById("days").innerHTML = Math.ceil(timediff/ (1000 * 3600 * 24));
-    document.getElementById("percentage").innerHTML = 1
+     
+    document.getElementById("percentage").innerHTML = (netresult*100/(buyconverted+sellfees)).toFixed(2) 
 }
