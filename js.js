@@ -13,7 +13,7 @@ function calculation(){
     if(isNaN(buyprice) || isNaN(sellprice)){
        
         alert("Prices are mandatory")
-        return
+        return 
     }
    
     var buyconverted = (buyprice + buyfees)/buyconversion;
