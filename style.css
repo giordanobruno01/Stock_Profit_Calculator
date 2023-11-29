@@ -2,19 +2,19 @@ header {
   background-color: aqua;
 }
 
-main {
-  background-color: aliceblue;
+main #dollar {
+  display: none;
 }
-main div {
-  background-color: aquamarine;
-}
-main form {
+main #dollar form {
   width: 80vw;
 }
-main form div {
+main #dollar form div {
   display: block;
   align-items: center;
   margin: auto;
+}
+main #othercurr {
+  display: none;
 }
 
 footer {

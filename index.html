@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="js.js"></script>
     <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <title>Investment</title>
 </head>
 
@@ -14,69 +15,116 @@
     <main>
         <div>
             <h1>Instructions </h1>
-
         </div>
-        <form action="">
-            <div>
-                <label for="stock">Stock:</label>
-                <input type="text" placeholder="Stock" id="stock">
-            </div>
+        <label for="option">Choose one</label>
+        <button id="optdollar" onclick="displaydollar()">dolar</button>
+        <button id="optother" onclick="displayother()">other</button>
 
-            <div>
-                <label for="buydate">Date of Purchase:</label>
-                <input type="date" placeholder="Buy Date" id="buydate">
-            </div>
+        <div id="dollar">
+            <form action="">
+                <div>
+                    <label for="stock">Stock:</label>
+                    <input type="text" placeholder="Stock" id="stock">
+                </div>
+                <div>
+                    <label for="buydate">Date of Purchase:</label>
+                    <input type="date" placeholder="Buy Date" id="buydate">
+                </div>
+                <div>
+                    <label for="buyprice">Stock Purchase Price:</label>
+                    <input type="number" placeholder="Buy Price your currency" id="buyprice" required>
+                </div>
+                <div>
+                    <label for="buyconversion">Currency rate to USD:</label>
+                    <input type="number" placeholder="Buy Conversion" id="buyconversion">
+                </div>
+                <div>
+                    <label for="username">Purchaces fees:</label>
+                    <input type="number" placeholder="Fees" id="buyfees">
+                </div>
+                <div>
+                    <label for="username">Date of selling:</label>
+                    <input type="date" placeholder="Sell Date" id="selldate">
+                </div>
+                <div>
+                    <label for="username">Stock Sell Price:</label>
+                    <input type="number" placeholder="Sell Price" id="sellprice" required>
+                </div>
+                <div>
+                    <label for="username">Currency rate from USD:</label>
+                    <input type="number" placeholder="Sell Conversion your currency" id="sellconversion">
+                </div>
+                <div>
+                    <label for="username">Selling fees:</label>
+                    <input type="number" placeholder="Fees" id="sellfees">
+                </div>
+                <input type="button" value="Calculate" onclick="calculation()">
+                <div>
+                    <p>Profit</p>
+                    <p id="profit">
+                    </p>
+                    <p>Days</p>
+                    <p id="days"></p>
+                    <p>Percentage</p>
+                    <p id="percentage"></p>
+                </div>
+            </form>
+        </div>
+        <div id="othercurr">
+            <form action="">
+                <div>
+                    <label for="stock">Stock:</label>
+                    <input type="text" placeholder="Stock" id="stock">
+                </div>
+                <div>
+                    <label for="buydate">Date of Purchase:</label>
+                    <input type="date" placeholder="Buy Date" id="buydate">
+                </div>
+                <div>
+                    <label for="buyprice">Stock Purchase Price:</label>
+                    <input type="number" placeholder="Buy Price your currency" id="buyprice" required>
+                </div>
+                <div>
+                    <label for="buyconversion">Currency rate to USD:</label>
+                    <input type="number" placeholder="Buy Conversion" id="buyconversion">
+                </div>
+                <div>
+                    <label for="username">Purchaces fees:</label>
+                    <input type="number" placeholder="Fees" id="buyfees">
+                </div>
+                <div>
+                    <label for="username">Date of selling:</label>
+                    <input type="date" placeholder="Sell Date" id="selldate">
+                </div>
+                <div>
+                    <label for="username">Stock Sell Price:</label>
+                    <input type="number" placeholder="Sell Price" id="sellprice" required>
+                </div>
+                <div>
+                    <label for="username">Currency rate from USD:</label>
+                    <input type="number" placeholder="Sell Conversion your currency" id="sellconversion">
+                </div>
+                <div>
+                    <label for="username">Selling fees:</label>
+                    <input type="number" placeholder="Fees" id="sellfees">
+                </div>
+                <input type="button" value="Calculate" onclick="calculation()">
+                <div>
+                    <p>Profit</p>
+                    <p id="profit">
+                    </p>
+                    <p>Days</p>
+                    <p id="days"></p>
+                    <p>Percentage</p>
+                    <p id="percentage"></p>
+                </div>
+            </form>
+        </div>
 
-            <div>
-                <label for="buyprice">Stock Purchase Price:</label>
-                <input type="number" placeholder="Buy Price your currency" id="buyprice" required>
-            </div>
-
-            <div>
-                <label for="buyconversion">Currency rate to USD:</label>
-                <input type="number" placeholder="Buy Conversion" id="buyconversion">
-            </div>
-
-            <div>
-                <label for="username">Purchaces fees:</label>
-                <input type="number" placeholder="Fees" id="buyfees">
-            </div>
-
-            <div>
-                <label for="username">Date of selling:</label>
-                <input type="date" placeholder="Sell Date" id="selldate" >
-            </div>
-
-            <div>
-                <label for="username">Stock Sell Price:</label>
-                <input type="number" placeholder="Sell Price" id="sellprice" required>
-            </div>
-
-            <div>
-                <label for="username">Currency rate from USD:</label>
-                <input type="number" placeholder="Sell Conversion your currency" id="sellconversion">
-            </div>
-
-            <div>
-                <label for="username">Selling fees:</label>
-                <input type="number" placeholder="Fees" id="sellfees">
-            </div>
-            <input type="button" value="Calculate" onclick="calculation()">
-
-            <div>
-                <p>Profit</p>
-                <p id="profit">
-                </p>
-                <p>Days</p>
-                <p id="days"></p>
-                <p>Percentage</p>
-                <p id="percentage"></p>
-            </div>
-        </form>
- 
     </main>
     <footer></footer>
-
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </body>
- 
+
 </html>

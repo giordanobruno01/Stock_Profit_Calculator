@@ -1,19 +1,24 @@
 header {
   background-color: aqua;
 }
+
 main {
-  background-color: aliceblue;
-  div {
-    background-color: aquamarine;
+  #dollar {
+    display: none;
+   
+    form {
+      width: 80vw;
+
+      div {
+        display: block;
+        align-items: center;
+        margin: auto;
+      }
+    }
   }
-  form {
-    width: 80vw;
+  #othercurr{
+    display: none;
     
-   div{ 
-    display: block;
-    align-items: center;
-    margin: auto;
-   } 
   }
 }
 
