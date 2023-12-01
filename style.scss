@@ -3,9 +3,13 @@ header {
 }
 
 main {
+  display: block;
+  margin: auto;
+
   #dollar {
     display: none;
-   
+    margin: auto;
+
     form {
       width: 80vw;
 
@@ -16,9 +20,8 @@ main {
       }
     }
   }
-  #othercurr{
+  #othercurr {
     display: none;
-    
   }
 }
 

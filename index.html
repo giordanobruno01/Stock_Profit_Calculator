@@ -34,7 +34,7 @@
                     <label for="buyprice">Stock Purchase Price:</label>
                     <input type="number" placeholder="Buy Price your currency" id="buyprice" required>
                 </div>
-               
+
                 <div>
                     <label for="username">Purchaces fees:</label>
                     <input type="number" placeholder="Fees" id="buyfees">
@@ -47,21 +47,13 @@
                     <label for="username">Stock Sell Price:</label>
                     <input type="number" placeholder="Sell Price" id="sellprice" required>
                 </div>
-               
+
                 <div>
                     <label for="username">Selling fees:</label>
                     <input type="number" placeholder="Fees" id="sellfees">
                 </div>
                 <input type="button" value="Calculate" onclick="calculation()">
-                <div>
-                    <p>Profit</p>
-                    <p id="profit">
-                    </p>
-                    <p>Days</p>
-                    <p id="days"></p>
-                    <p>Percentage</p>
-                    <p id="percentage"></p>
-                </div>
+
             </form>
         </div>
         <div id="othercurr">
@@ -103,21 +95,23 @@
                     <input type="number" placeholder="Fees" id="sellfees">
                 </div>
                 <input type="button" value="Calculate" onclick="calculation()">
-                <div>
-                    <p>Profit</p>
-                    <p id="profit">
-                    </p>
-                    <p>Days</p>
-                    <p id="days"></p>
-                    <p>Percentage</p>
-                    <p id="percentage"></p>
-                </div>
+
             </form>
+
+        </div>
+        <div id="results">
+            <p>Profit</p>
+            <p id="profit">
+            </p>
+            <p>Days</p>
+            <p id="days"></p>
+            <p>Percentage</p>
+            <p id="percentage"></p>
         </div>
 
     </main>
     <footer></footer>
-    
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </body>
 

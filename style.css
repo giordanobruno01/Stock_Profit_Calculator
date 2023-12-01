@@ -2,8 +2,13 @@ header {
   background-color: aqua;
 }
 
+main {
+  display: block;
+  margin: auto;
+}
 main #dollar {
   display: none;
+  margin: auto;
 }
 main #dollar form {
   width: 80vw;
