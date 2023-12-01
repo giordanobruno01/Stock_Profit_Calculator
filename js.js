@@ -41,22 +41,26 @@ function calculation() {
   var sellcoverted = (sellprice - sellfees) / sellconversion;
 
   var netresult = sellcoverted - buyconverted;
-  document.getElementById("profit").innerHTML = netresult.toFixed(2);
+
   var timediff = selldate - buydate;
   document.getElementById("day").innerHTML = Math.ceil(
-    timediff / (1000 * 3600 * 24)
+    timediff / (1000 * 3600 * 24) + " days"
   );
 
-  document.getElementById("percentage").innerHTML = (
+  document.getElementById("percentage").innerHTML ="Profit percentage: "+  (
     (netresult * 100) /
     (buyconverted + sellfees)
-  ).toFixed(2);
+  ).toFixed(2)+"%";
   document.getElementById("results").style.display = "block";
   if (buydate === 0 || selldate === 0) {
     document.getElementById("days").style.display = "none";
   }
   if(stock!==""){
-    document.getElementById("stockname").innerHTML = "Profit for "+ stock
+   document.getElementById("profit").innerHTML =
+     "Your profit for " + stock + " is: " + netresult.toFixed(2);
+  }else{
+    document.getElementById("profit").innerHTML =
+      "Your profit is: " + netresult.toFixed(2);
   }
 }
 function displaydollar() {
