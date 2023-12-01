@@ -21,6 +21,9 @@ main #dollar form div {
 main #othercurr {
   display: none;
 }
+main #results {
+  display: none;
+}
 
 footer {
   background-color: red;

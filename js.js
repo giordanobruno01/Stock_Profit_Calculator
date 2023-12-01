@@ -1,6 +1,10 @@
 function calculation() {
   var stock = document.getElementById("stock").value;
-  var buydate = new Date(document.getElementById("buydate").value);
+  var buydate =
+    document.getElementById("buydate").value === ""
+      ? 0
+      : new Date(document.getElementById("buydate").value);
+  document.getElementById("buydate").value;
   var buyprice = parseFloat(document.getElementById("buyprice").value);
   var buyconversion = parseFloat(
     document.getElementById("buyconversion").value === ""
@@ -23,7 +27,10 @@ function calculation() {
       ? 0
       : document.getElementById("sellfees").value
   );
-  var selldate = new Date(document.getElementById("selldate").value);
+  var selldate =
+    document.getElementById("selldate").value === ""
+      ? 0
+      : new Date(document.getElementById("selldate").value);
 
   if (isNaN(buyprice) || isNaN(sellprice)) {
     alert("Prices are mandatory");
@@ -36,7 +43,7 @@ function calculation() {
   var netresult = sellcoverted - buyconverted;
   document.getElementById("profit").innerHTML = netresult.toFixed(2);
   var timediff = selldate - buydate;
-  document.getElementById("days").innerHTML = Math.ceil(
+  document.getElementById("day").innerHTML = Math.ceil(
     timediff / (1000 * 3600 * 24)
   );
 
@@ -44,10 +51,17 @@ function calculation() {
     (netresult * 100) /
     (buyconverted + sellfees)
   ).toFixed(2);
+  document.getElementById("results").style.display = "block";
+  if (buydate === 0 || selldate === 0) {
+    document.getElementById("days").style.display = "none";
+  }
+  if(stock!==""){
+    document.getElementById("stockname").innerHTML = "Profit for "+ stock
+  }
 }
-function displaydollar(){
-    document.getElementById("dollar").style.display = "block";
-    document.getElementById("othercurr").style.display = "none";
+function displaydollar() {
+  document.getElementById("dollar").style.display = "block";
+  document.getElementById("othercurr").style.display = "none";
 }
 function displayother() {
   document.getElementById("dollar").style.display = "none";
@@ -67,4 +81,3 @@ function displayother() {
 //       $("#dollar").hide();
 //     });
 //   });
-
